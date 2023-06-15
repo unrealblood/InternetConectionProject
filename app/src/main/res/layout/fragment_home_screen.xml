@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.home_screen.HomeScreenFragment">
+
+    <data>
+
+        <variable
+            name="homeScreenViewModel"
+            type="com.strength.internetconectionproject.fragments.home_screen.HomeScreenViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:marsDataList="@{homeScreenViewModel.marsData}"
+            app:spanCount="2" />
+
+    </RelativeLayout>
+
+</layout>
